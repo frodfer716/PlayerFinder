@@ -1,0 +1,25 @@
+<form class="form-group col" style="margin-top: 1%;">
+    <div class="form-group" style="margin-bottom: 2%;">
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="cuadroNombre">
+    </div>
+    <div class="form-group" style="margin-bottom: 2%;">
+      <label for="edad">Edad:</label>
+      <input type="number" name="edad" id="edad" placeholder="Edad" class="form-control" [(ngModel)]="cuadroEdad">
+    </div>
+    <div class="form-group" style="margin-bottom: 2%;">
+      <label for="posicion">Posicion:</label>
+      <input type="string" name="posicion" id="posicion" placeholder="Posicion" class="form-control" [(ngModel)]="cuadroPosicion">
+    </div>
+    <div class="form-group" style="margin-bottom: 2%;">
+      <label for="equipo">Equipo:</label>
+      <input type="string" name="equipo" id="equipo" placeholder="Equipo" class="form-control" [(ngModel)]="cuadroEquipo">
+    </div>
+    <div class="form-group" style="margin-bottom: 2%;">
+      <label for="valor">Valor de mercado (M):</label>
+      <input type="number" name="valor" id="valor" placeholder="Valor" class="form-control" [(ngModel)]="cuadroValor">
+    </div>
+    <div class="form-group col-md-1" style="margin-top: 4%;">
+      <button type="submit" class="btn btn-primary" (click)="agregarEmpleado()">Guardar</button>
+    </div>
+</form>

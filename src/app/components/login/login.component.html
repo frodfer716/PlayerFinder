@@ -1,0 +1,37 @@
+<div class="container" style="padding: 2% 4% 2% 4%; border: 1px dotted black; border-radius: 5px; margin-top: 3%; width: fit-content;">
+    <div class="col" style="text-align: center;"><h1>{{title}}</h1></div>
+
+    <div *ngIf="formName == 'login'">
+        <form class="form-group col" #miFormulario="ngForm" (ngSubmit)="login(miFormulario)">
+            <div class="form-group" style="margin-top: 10%;">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" name="email" placeholder="Email" ngModel>
+            </div>
+            <div class="form-group" style="margin-top: 6%;">
+                <label for="password">Contraseña:</label>
+                <input type="password" class="form-control" name="password" placeholder="Contraseña" ngModel>
+            </div>
+            <div class="form-group" style="margin-top: 6%;">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+        <p style="margin-top: 8%; text-align: center;">No tienes cuenta? <a class="text-primary" style="cursor: pointer;" (click)="changeType('register')">Regístrate</a>!</p>
+    </div>
+    
+    <div *ngIf="formName == 'register'">
+        <form class="form-group col" #miFormulario="ngForm" (ngSubmit)="register(miFormulario)">
+            <div class="form-group" style="margin-top: 10%;">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" name="email" placeholder="Email" ngModel>
+            </div>
+            <div class="form-group" style="margin-top: 6%;">
+                <label for="password">Contraseña:</label>
+                <input type="password" class="form-control" name="password" placeholder="Contraseña" ngModel>
+            </div>
+            <div class="form-group" style="margin-top: 6%;">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+        <p style="margin-top: 8%; text-align: center;">Ya tienes una cuenta? <a class="text-primary" style="cursor: pointer;" (click)="changeType('login')">Inicia sesión</a>!</p>
+    </div>
+</div>

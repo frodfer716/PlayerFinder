@@ -1,0 +1,33 @@
+<div class="table-responsive">
+  <table class="table table-hover" style="background-color: transparent;">
+    <thead class="table-dark">
+      <tr>
+        <th *ngIf="estaLogueado()" scope="col">Favs.</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Posicion</th>
+        <th scope="col">Equipo</th>
+        <th scope="col">Valor de mercado</th>
+        <th *ngIf="estaLogueado() && !(estaEnFavoritos())" scope="col" colspan="2">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let jugador of listaJugadores; let i=index">
+        <td *ngIf="estaLogueado() && !(estaEnFavoritos())">
+          <button type="submit" *ngIf="!esFavorito(i)" (click)="agregarFavorito(i)" class="btn btn-outline-warning">&#9733;</button>
+          <button type="submit" *ngIf="esFavorito(i)" (click)="eliminarFavorito(i)" class="btn btn-warning">&#9734;</button>
+        </td>
+        <td *ngIf="estaLogueado() && estaEnFavoritos()">
+          <button style="cursor: default;" *ngIf="esFavorito(i)" class="btn btn-warning">&#9734;</button>
+        </td>
+        <td style="vertical-align: middle;">{{jugador.nombre}}</td>
+        <td style="vertical-align: middle;">{{jugador.edad}}</td>
+        <td style="vertical-align: middle;">{{jugador.posicion}}</td>
+        <td style="vertical-align: middle;">{{jugador.equipo}}</td>
+        <td style="vertical-align: middle;">{{jugador.valor}} M€</td>
+        <td *ngIf="estaLogueado() && !(estaEnFavoritos())"><button type="submit" class="btn btn-success" [routerLink]="['/actualiza', i]">Editar</button></td>
+        <td *ngIf="estaLogueado() && !(estaEnFavoritos())"><button type="submit" class="btn btn-danger" (click)="eliminaJugador(i)">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
