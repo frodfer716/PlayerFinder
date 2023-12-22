@@ -1,6 +1,6 @@
 <div class="container" style="margin-bottom: 6%;">
     <div class="col" style="text-align: center; margin: 4% 0 2% 0;"><h1>{{title}}</h1></div>
-    <div id="bloqueAgrega" *ngIf="estaLogueado()" style="border: 1px black dotted; padding: 1%; border-radius: 5px; width: fit-content; margin-bottom: 4%;">
+    <div id="bloqueAgrega" *ngIf="estaLogueado()" style="border: 1px black solid; padding: 1%; border-radius: 5px; width: fit-content; margin-bottom: 4%;">
         <a class="nav-link" style="text-align: center;" href="#" (click)="abrirAgrega('agregaJugador', 'bloqueAgrega')"><h3>&#8643; Agregar jugador &#8642;</h3></a>
         <app-agregado-jugador id="agregaJugador" style="display: none;"></app-agregado-jugador>
     </div>
