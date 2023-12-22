@@ -1,17 +1,17 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" style="margin-left: 1%;" href="">PlayerFinder</a>
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="display: flex; justify-content: space-between; align-items: center; padding-left: 1%; padding-right: 1%;">
+    <div style="display: flex; align-items: center;">
+        <a class="navbar-brand" href="">PlayerFinder<span *ngIf="estaLogueado()">{{username}}</span></a>
+        <ul class="navbar-nav mr-auto" style="display: flex; align-items: center;">
             <li class="nav-item">
                 <a class="nav-link" href="/favoritos">Favoritos</a>
             </li>
         </ul>
-        <div *ngIf="!pageFinder()" style="margin-left: 80%;">
-            <div *ngIf="!estaLogueado()">
-                <button type="button" class="btn btn-outline-light" [routerLink]="['/login', 'login']" style="margin-right: 20px;">Login</button>
-                <button type="button" class="btn btn-outline-light" [routerLink]="['/login', 'register']">Register</button>
-            </div>
-            <button type="button" class="btn btn-outline-light" style="margin-left: 120%;" *ngIf="estaLogueado()" (click)="logout()">Logout</button>
+    </div>
+    <div *ngIf="!pageFinder()">
+        <div *ngIf="!estaLogueado()">
+            <button type="button" class="btn btn-outline-light" [routerLink]="['/login', 'login']" style="margin-right: 20px;">Login</button>
+            <button type="button" class="btn btn-outline-light" [routerLink]="['/login', 'register']">Register</button>
         </div>
+        <button type="button" class="btn btn-outline-light" *ngIf="estaLogueado()" (click)="logout()">Logout</button>
     </div>
 </nav>

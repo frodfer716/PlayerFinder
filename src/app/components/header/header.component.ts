@@ -8,7 +8,13 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class HeaderComponent {
 
+  username!:string;
+
   constructor( private loginService:LoginService ) { }
+
+  ngOnInit() {
+    this.username = " - " + this.loginService.getUser();
+  }
 
   estaLogueado() {
     return this.loginService.estaLogueado();
